@@ -1,0 +1,310 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Fatima 🌹</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: Georgia, serif;
+  color: white;
+  background:
+    radial-gradient(circle at top, #66305c, transparent 55%),
+    linear-gradient(145deg, #160e27, #35152e, #160e27);
+  overflow-x: hidden;
+  text-align: center;
+}
+
+.petal {
+  position: fixed;
+  top: -30px;
+  z-index: 0;
+  pointer-events: none;
+  animation: fall linear infinite;
+  opacity: .7;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh) rotate(540deg);
+  }
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 520px;
+  margin: auto;
+  padding: 35px 20px 60px;
+}
+
+.small {
+  color: #f7c9dc;
+  letter-spacing: 4px;
+  font-size: 11px;
+  margin-top: 30px;
+}
+
+h1 {
+  font-size: clamp(38px, 11vw, 65px);
+  color: #ffd6e6;
+  text-shadow: 0 0 25px #ff79b8;
+  margin: 22px 0;
+}
+
+h2 {
+  color: #ffcae0;
+  margin-bottom: 15px;
+}
+
+p {
+  line-height: 1.8;
+  color: #f7e5ef;
+  font-size: 16px;
+}
+
+.rose {
+  font-size: 75px;
+  margin: 25px 0;
+  filter: drop-shadow(0 0 20px #ff72ad);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  50% { transform: scale(1.12); }
+}
+
+.card {
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,200,225,.3);
+  border-radius: 22px;
+  padding: 25px 18px;
+  margin: 22px 0;
+  box-shadow: 0 10px 35px rgba(0,0,0,.2);
+  backdrop-filter: blur(10px);
+}
+
+button {
+  border: 1px solid #ffc2dc;
+  border-radius: 30px;
+  padding: 14px 24px;
+  background: linear-gradient(120deg,#ff8dbb,#c45c9b);
+  color: #35152e;
+  font-size: 15px;
+  font-weight: bold;
+  margin: 10px 5px;
+  cursor: pointer;
+  box-shadow: 0 5px 20px #e65b9b44;
+}
+
+button:active {
+  transform: scale(.96);
+}
+
+.hidden {
+  display: none;
+}
+
+.message {
+  color: #ffe0ed;
+  font-size: 17px;
+  line-height: 1.9;
+  margin-top: 18px;
+}
+
+.divider {
+  color: #f6a9ce;
+  margin: 25px 0;
+  letter-spacing: 5px;
+}
+
+footer {
+  color: #eeb6d0;
+  font-size: 13px;
+  margin-top: 45px;
+}
+</style>
+</head>
+
+<body>
+
+<div id="petals"></div>
+
+<main class="container">
+
+  <div class="small">A LITTLE WORLD MADE FOR</div>
+
+  <div class="rose">🌹</div>
+
+  <h1>Fatima</h1>
+
+  <p>
+    Some people make the world more beautiful
+    just by being in it.
+  </p>
+
+  <div class="card">
+    <h2>Welcome Back, My Special One ❤️</h2>
+    <p>
+      Tumhare liye ek chhoti si duniya banayi hai.
+      Iske andar kuch surprises sirf tumhare naam hain.
+    </p>
+    <button onclick="showSection('garden')">
+      Enter Your Little World ✨
+    </button>
+  </div>
+
+  <section id="garden" class="hidden">
+    <div class="divider">✧ 🌹 ✧</div>
+    <h2>Your Rose Garden</h2>
+    <p>
+      Har phool ek khoobsurat ehsaas ki nishani hai.
+    </p>
+
+    <div class="rose">🌷 🌹 🌸</div>
+
+    <div class="card">
+      <h2>One Little Secret</h2>
+      <p id="secret">
+        Ek secret tumhara intezar kar raha hai...
+      </p>
+      <button onclick="revealSecret()">
+        Reveal My Secret 💌
+      </button>
+    </div>
+
+    <button onclick="showSection('smile')">
+      Next Surprise 💗
+    </button>
+  </section>
+
+  <section id="smile" class="hidden">
+    <div class="divider">✧ 💕 ✧</div>
+    <h2>A Little Happiness Corner</h2>
+    <p>
+      Ab ek chhota sa sawaal...
+    </p>
+
+    <div class="card">
+      <h2>What do you deserve?</h2>
+      <button onclick="answer('All the happiness in the world! ❤️')">
+        Happiness ❤️
+      </button>
+      <button onclick="answer('A life full of peace and beautiful moments! 🌸')">
+        Peace 🌸
+      </button>
+      <button onclick="answer('Endless love and countless duas! 🌹')">
+        Love 🌹
+      </button>
+      <p class="message" id="answer"></p>
+    </div>
+
+    <button onclick="showSection('dua')">
+      One Special Dua 🤲
+    </button>
+  </section>
+
+  <section id="dua" class="hidden">
+    <div class="divider">✧ 🤲 ✧</div>
+    <h2>For Your Health</h2>
+
+    <div class="card">
+      <div class="rose">🌸</div>
+      <p class="message">
+        Ya Allah, Fatima ko mukammal sehat,
+        sukoon aur khushiyan ata farma.
+        Uski har takleef door farma aur
+        uske har naye din ko pehle se behtar bana.
+        Ameen. 🤲
+      </p>
+    </div>
+
+    <button onclick="showSection('final')">
+      Open Your Final Surprise ❤️
+    </button>
+  </section>
+
+  <section id="final" class="hidden">
+    <div class="divider">✧ 🌹 ✧</div>
+
+    <div class="rose">❤️</div>
+
+    <h2>One Last Thing, Fatima...</h2>
+
+    <div class="card">
+      <p class="message">
+        Tumhari muskurahat bohot qeemti hai.
+        Apna khayal rakhna, araam karna aur
+        hamesha yaad rakhna ke tumhari khushi
+        mere liye bohot ahmiyat rakhti hai.
+      </p>
+
+      <div class="divider">∞</div>
+
+      <h2>Made With Love</h2>
+      <h1 style="font-size:34px">HUSSAIN ALI</h1>
+      <p>For Fatima, Always. 🌹</p>
+    </div>
+
+    <p>May your days always be filled with happiness.</p>
+  </section>
+
+  <footer>
+    A tiny universe, created especially for Fatima 🌹
+  </footer>
+
+</main>
+
+<script>
+function showSection(id) {
+  document.querySelectorAll("section").forEach(section => {
+    section.classList.add("hidden");
+  });
+
+  document.getElementById(id).classList.remove("hidden");
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+}
+
+function revealSecret() {
+  document.getElementById("secret").innerHTML =
+    "Fatima, tumhari sehat, tumhara sukoon aur tumhari muskurahat mere liye bohot special hain. ❤️🌹";
+}
+
+function answer(message) {
+  document.getElementById("answer").innerHTML = message;
+}
+
+function makePetals() {
+  const area = document.getElementById("petals");
+
+  for (let i = 0; i < 18; i++) {
+    const petal = document.createElement("div");
+    petal.className = "petal";
+    petal.innerHTML = "🌸";
+    petal.style.left = Math.random() * 100 + "vw";
+    petal.style.animationDuration = (6 + Math.random() * 8) + "s";
+    petal.style.animationDelay = (Math.random() * 8) + "s";
+    petal.style.fontSize = (12 + Math.random() * 15) + "px";
+    area.appendChild(petal);
+  }
+}
+
+makePetals();
+</script>
+
+</body>
+</html>
