@@ -4,306 +4,623 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For Fatima 🌹</title>
+<meta name="theme-color" content="#090e24">
+<title>Fatima — A Universe of Her Own</title>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+:root {
+  --navy: #080d20;
+  --blue: #152747;
+  --lavender: #b9a9ee;
+  --silver: #e3e9fa;
+  --gold: #d8c59a;
+  --muted: #b6bfd9;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  min-height: 100vh;
-  font-family: Georgia, serif;
+  background: var(--navy);
   color: white;
-  background:
-    radial-gradient(circle at top, #66305c, transparent 55%),
-    linear-gradient(145deg, #160e27, #35152e, #160e27);
+  font-family: 'Poppins', sans-serif;
   overflow-x: hidden;
-  text-align: center;
-}
-
-.petal {
-  position: fixed;
-  top: -30px;
-  z-index: 0;
-  pointer-events: none;
-  animation: fall linear infinite;
-  opacity: .7;
-}
-
-@keyframes fall {
-  to {
-    transform: translateY(110vh) rotate(540deg);
-  }
-}
-
-.container {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  max-width: 520px;
-  margin: auto;
-  padding: 35px 20px 60px;
-}
-
-.small {
-  color: #f7c9dc;
-  letter-spacing: 4px;
-  font-size: 11px;
-  margin-top: 30px;
-}
-
-h1 {
-  font-size: clamp(38px, 11vw, 65px);
-  color: #ffd6e6;
-  text-shadow: 0 0 25px #ff79b8;
-  margin: 22px 0;
-}
-
-h2 {
-  color: #ffcae0;
-  margin-bottom: 15px;
-}
-
-p {
-  line-height: 1.8;
-  color: #f7e5ef;
-  font-size: 16px;
-}
-
-.rose {
-  font-size: 75px;
-  margin: 25px 0;
-  filter: drop-shadow(0 0 20px #ff72ad);
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  50% { transform: scale(1.12); }
-}
-
-.card {
-  background: rgba(255,255,255,.08);
-  border: 1px solid rgba(255,200,225,.3);
-  border-radius: 22px;
-  padding: 25px 18px;
-  margin: 22px 0;
-  box-shadow: 0 10px 35px rgba(0,0,0,.2);
-  backdrop-filter: blur(10px);
 }
 
 button {
-  border: 1px solid #ffc2dc;
-  border-radius: 30px;
-  padding: 14px 24px;
-  background: linear-gradient(120deg,#ff8dbb,#c45c9b);
-  color: #35152e;
-  font-size: 15px;
-  font-weight: bold;
-  margin: 10px 5px;
+  font-family: inherit;
+}
+
+#universe {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background:
+    radial-gradient(ellipse at 20% 20%, #283a67 0%, transparent 42%),
+    radial-gradient(ellipse at 80% 70%, #342454 0%, transparent 40%),
+    linear-gradient(150deg, #080d20, #101a37, #100d27);
+}
+
+#stars {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  animation: twinkle 3s infinite alternate;
+}
+
+@keyframes twinkle {
+  from {opacity: .2; transform: scale(.7)}
+  to {opacity: 1; transform: scale(1.7)}
+}
+
+.orb {
+  position: fixed;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: .18;
+  pointer-events: none;
+  animation: float 10s ease-in-out infinite alternate;
+}
+
+.orb.one {
+  background: #7a8ff5;
+  top: 10%;
+  left: -130px;
+}
+
+.orb.two {
+  background: #9e71d5;
+  bottom: 5%;
+  right: -140px;
+}
+
+@keyframes float {
+  to {transform: translate(70px, -60px)}
+}
+
+.container {
+  width: 100%;
+  max-width: 650px;
+  margin: auto;
+  padding: 20px;
+}
+
+.hero {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.eyebrow {
+  color: var(--gold);
+  letter-spacing: 5px;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+.hero-icon {
+  font-size: 65px;
+  margin: 28px 0;
+  filter: drop-shadow(0 0 22px #b5caff);
+  animation: levitate 4s ease-in-out infinite;
+}
+
+@keyframes levitate {
+  50% {transform: translateY(-14px) rotate(5deg)}
+}
+
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(65px, 17vw, 105px);
+  font-weight: 500;
+  letter-spacing: 5px;
+  background: linear-gradient(120deg,#fff,#b9c9ff,#d4bdf5,#fff);
+  -webkit-background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 20px #aab9f555);
+}
+
+.subtitle {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 2;
+  max-width: 340px;
+  margin: 15px auto;
+}
+
+.glass {
+  background: linear-gradient(
+    140deg,
+    rgba(255,255,255,.09),
+    rgba(255,255,255,.025)
+  );
+  border: 1px solid rgba(210,220,255,.18);
+  border-radius: 24px;
+  padding: 28px 22px;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 20px 60px #0005;
+}
+
+.main-button {
+  display: inline-block;
+  padding: 15px 27px;
+  border-radius: 40px;
+  border: 1px solid #d6dfff88;
+  background: linear-gradient(110deg,#7d91c7,#a99bd8);
+  color: #10172d;
+  font-weight: 600;
+  font-size: 13px;
+  margin-top: 22px;
   cursor: pointer;
-  box-shadow: 0 5px 20px #e65b9b44;
+  box-shadow: 0 0 30px #9eafff33;
+  transition: .3s;
 }
 
-button:active {
-  transform: scale(.96);
+.main-button:active {
+  transform: scale(.95);
 }
 
-.hidden {
-  display: none;
+.section {
+  padding: 75px 0;
+  text-align: center;
 }
 
-.message {
-  color: #ffe0ed;
-  font-size: 17px;
-  line-height: 1.9;
-  margin-top: 18px;
+.section-label {
+  color: var(--gold);
+  letter-spacing: 4px;
+  font-size: 10px;
+  margin-bottom: 14px;
+}
+
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 43px;
+  font-weight: 500;
+  color: var(--silver);
+  margin-bottom: 18px;
+}
+
+.description {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 2;
+  max-width: 440px;
+  margin: auto;
 }
 
 .divider {
-  color: #f6a9ce;
-  margin: 25px 0;
-  letter-spacing: 5px;
+  width: 75px;
+  height: 1px;
+  background: linear-gradient(90deg,transparent,var(--lavender),transparent);
+  margin: 28px auto;
 }
 
-footer {
-  color: #eeb6d0;
-  font-size: 13px;
-  margin-top: 45px;
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 13px;
+  margin-top: 30px;
+}
+
+.surprise-card {
+  min-height: 165px;
+  cursor: pointer;
+  transition: .3s;
+  text-align: left;
+  padding: 20px 15px;
+}
+
+.surprise-card:active {
+  transform: scale(.96);
+}
+
+.card-icon {
+  font-size: 31px;
+  margin-bottom: 15px;
+}
+
+.surprise-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: #e0ddff;
+}
+
+.surprise-card p {
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.7;
+  margin-top: 8px;
+}
+
+.hidden-message {
+  display: none;
+  margin-top: 14px;
+  color: #e7dfff;
+  font-size: 12px;
+  line-height: 2;
+  border-top: 1px solid #ffffff22;
+  padding-top: 12px;
+}
+
+.reveal-area {
+  margin-top: 24px;
+}
+
+.choice {
+  display: block;
+  width: 100%;
+  background: #ffffff0b;
+  border: 1px solid #c4c8ed55;
+  color: #e8eaff;
+  padding: 14px;
+  border-radius: 14px;
+  margin: 10px 0;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.choice:active {
+  background: #8798c544;
+}
+
+.result {
+  min-height: 50px;
+  color: #d9d0ff;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 23px;
+  line-height: 1.6;
+  margin-top: 18px;
+}
+
+.dua {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  color: #e3dafa;
+  line-height: 1.8;
+}
+
+.final-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 43px;
+  letter-spacing: 4px;
+  color: #d7d0ff;
+  margin-top: 20px;
+}
+
+.footer {
+  padding: 40px 10px;
+  text-align: center;
+  color: #8793b7;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+#toast {
+  position: fixed;
+  bottom: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  max-width: 90%;
+  padding: 13px 20px;
+  background: #28375a;
+  color: white;
+  border: 1px solid #b5c4ed55;
+  border-radius: 30px;
+  font-size: 12px;
+  display: none;
+  z-index: 20;
+}
+
+@media(max-width:380px) {
+  .grid {gap: 9px}
+  .surprise-card {padding: 15px 11px}
+  .section-title {font-size: 36px}
 }
 </style>
 </head>
 
 <body>
 
-<div id="petals"></div>
+<div id="universe"></div>
+<div id="stars"></div>
+<div class="orb one"></div>
+<div class="orb two"></div>
+<div id="toast"></div>
 
-<main class="container">
+<!-- OPENING -->
+<header class="hero container">
+  <div class="eyebrow">A universe created for one soul</div>
+  <div class="hero-icon">✦</div>
+  <h1>FATIMA</h1>
+  <p class="subtitle">
+    In a universe filled with countless stars,
+    some lights are simply unforgettable.
+  </p>
+  <div class="divider"></div>
+  <p class="eyebrow">This little universe belongs to you</p>
+  <button class="main-button" onclick="enterUniverse()">
+    ENTER YOUR UNIVERSE ✨
+  </button>
+</header>
 
-  <div class="small">A LITTLE WORLD MADE FOR</div>
+<main class="container" id="mainContent">
 
-  <div class="rose">🌹</div>
+<!-- INTRODUCTION -->
+<section class="section">
+  <div class="section-label">01 — YOUR LITTLE WORLD</div>
+  <h2 class="section-title">A Place Called Fatima</h2>
+  <p class="description">
+    Yeh koi aam website nahi.
+    Yeh ek chhota sa digital universe hai,
+    jahan har jagah tumhare liye ek special
+    surprise chhupa hua hai.
+  </p>
+  <div class="divider"></div>
+  <div class="glass">
+    <div style="font-size:45px">🌙</div>
+    <h2 class="section-title" style="font-size:30px">
+      You Are Special
+    </h2>
+    <p class="description">
+      Tumhari khushi, tumhara sukoon aur
+      tumhari muskurahat bohot qeemti hain.
+    </p>
+  </div>
+</section>
 
-  <h1>Fatima</h1>
-
-  <p>
-    Some people make the world more beautiful
-    just by being in it.
+<!-- SURPRISE CARDS -->
+<section class="section">
+  <div class="section-label">02 — SECRET DESTINATIONS</div>
+  <h2 class="section-title">Six Little Surprises</h2>
+  <p class="description">
+    Har card ko touch karo.
+    Har jagah ek naya message tumhara intezar kar raha hai.
   </p>
 
-  <div class="card">
-    <h2>Welcome Back, My Special One ❤️</h2>
-    <p>
-      Tumhare liye ek chhoti si duniya banayi hai.
-      Iske andar kuch surprises sirf tumhare naam hain.
-    </p>
-    <button onclick="showSection('garden')">
-      Enter Your Little World ✨
-    </button>
+  <div class="grid">
+
+    <div class="glass surprise-card" onclick="reveal(0)">
+      <div class="card-icon">🌌</div>
+      <h3>Galaxy</h3>
+      <p>A universe of beautiful thoughts</p>
+      <div class="hidden-message" id="message0">
+        Agar sitaron ko gin bhi liya jaye,
+        kuch khoobsurat ehsaas phir bhi lafzon
+        mein nahi samaye ja sakte.
+      </div>
+    </div>
+
+    <div class="glass surprise-card" onclick="reveal(1)">
+      <div class="card-icon">🦋</div>
+      <h3>Butterfly</h3>
+      <p>A symbol of beautiful beginnings</p>
+      <div class="hidden-message" id="message1">
+        Har naya din apne saath ek nayi umeed
+        lekar aata hai. Tumhara har din
+        khushiyon se bhara ho.
+      </div>
+    </div>
+
+    <div class="glass surprise-card" onclick="reveal(2)">
+      <div class="card-icon">💎</div>
+      <h3>Treasure</h3>
+      <p>Something truly precious</p>
+      <div class="hidden-message" id="message2">
+        Kuch cheezein duniya ki kisi bhi qeemat
+        se nahi toli ja sakti. Mohabbat,
+        bharosa aur apnon ka saath unmein se hain.
+      </div>
+    </div>
+
+    <div class="glass surprise-card" onclick="reveal(3)">
+      <div class="card-icon">🌙</div>
+      <h3>Moonlight</h3>
+      <p>A peaceful little corner</p>
+      <div class="hidden-message" id="message3">
+        Dua hai tumhari zindagi ka har andhera
+        roshni mein badal jaye aur har subah
+        tumhare liye sukoon lekar aaye.
+      </div>
+    </div>
+
+    <div class="glass surprise-card" onclick="reveal(4)">
+      <div class="card-icon">📜</div>
+      <h3>Secret Note</h3>
+      <p>A message hidden for you</p>
+      <div class="hidden-message" id="message4">
+        Fatima, apni muskurahat kabhi mat khona.
+        Tumhari khushi is chhoti si duniya
+        ka sabse khoobsurat hissa hai.
+      </div>
+    </div>
+
+    <div class="glass surprise-card" onclick="reveal(5)">
+      <div class="card-icon">♾️</div>
+      <h3>Forever</h3>
+      <p>A promise of care</p>
+      <div class="hidden-message" id="message5">
+        Har mausam mein, har naye din mein,
+        ek doosre ka khayal aur izzat
+        hamesha qaim rahe.
+      </div>
+    </div>
+
   </div>
+</section>
 
-  <section id="garden" class="hidden">
-    <div class="divider">✧ 🌹 ✧</div>
-    <h2>Your Rose Garden</h2>
-    <p>
-      Har phool ek khoobsurat ehsaas ki nishani hai.
+<!-- INTERACTIVE -->
+<section class="section">
+  <div class="section-label">03 — A LITTLE GAME</div>
+  <h2 class="section-title">Choose Your Universe</h2>
+  <p class="description">
+    Agar tum apni pasand ki ek magical jagah
+    choose kar sako, toh kaunsi hogi?
+  </p>
+
+  <div class="glass reveal-area">
+    <button class="choice" onclick="choose('A peaceful moonlit garden 🌙')">
+      🌙 Moonlit Garden
+    </button>
+    <button class="choice" onclick="choose('A magical galaxy full of stars ✨')">
+      ✨ Starry Galaxy
+    </button>
+    <button class="choice" onclick="choose('A beautiful crystal palace 💎')">
+      💎 Crystal Palace
+    </button>
+    <button class="choice" onclick="choose('A dreamy butterfly valley 🦋')">
+      🦋 Butterfly Valley
+    </button>
+    <div class="result" id="choiceResult"></div>
+  </div>
+</section>
+
+<!-- HEALTH -->
+<section class="section">
+  <div class="section-label">04 — A SPECIAL PRAYER</div>
+  <h2 class="section-title">A Dua For You</h2>
+
+  <div class="glass">
+    <div style="font-size:48px;margin-bottom:20px">🤲</div>
+    <p class="dua" dir="rtl">
+      اللَّهُمَّ رَبَّ النَّاسِ أَذْهِبِ الْبَأْسَ
+      وَاشْفِ أَنْتَ الشَّافِي
     </p>
-
-    <div class="rose">🌷 🌹 🌸</div>
-
-    <div class="card">
-      <h2>One Little Secret</h2>
-      <p id="secret">
-        Ek secret tumhara intezar kar raha hai...
-      </p>
-      <button onclick="revealSecret()">
-        Reveal My Secret 💌
-      </button>
-    </div>
-
-    <button onclick="showSection('smile')">
-      Next Surprise 💗
-    </button>
-  </section>
-
-  <section id="smile" class="hidden">
-    <div class="divider">✧ 💕 ✧</div>
-    <h2>A Little Happiness Corner</h2>
-    <p>
-      Ab ek chhota sa sawaal...
+    <div class="divider"></div>
+    <p class="description">
+      Ya Allah, Fatima ko mukammal sehat,
+      afiyat, sukoon aur khushiyan ata farma.
+      Uski har pareshani door farma.
+      Ameen.
     </p>
+    <div class="divider"></div>
+    <p style="color:var(--gold);font-size:12px">
+      May every new morning bring you peace.
+    </p>
+  </div>
+</section>
 
-    <div class="card">
-      <h2>What do you deserve?</h2>
-      <button onclick="answer('All the happiness in the world! ❤️')">
-        Happiness ❤️
-      </button>
-      <button onclick="answer('A life full of peace and beautiful moments! 🌸')">
-        Peace 🌸
-      </button>
-      <button onclick="answer('Endless love and countless duas! 🌹')">
-        Love 🌹
-      </button>
-      <p class="message" id="answer"></p>
-    </div>
+<!-- FINAL -->
+<section class="section">
+  <div class="section-label">05 — THE FINAL DESTINATION</div>
+  <h2 class="section-title">One Last Surprise</h2>
 
-    <button onclick="showSection('dua')">
-      One Special Dua 🤲
+  <div class="glass">
+    <div style="font-size:65px;margin:15px">✦</div>
+    <p class="description">
+      Is universe ko banane wala chahta tha
+      ke tum jab isay dekho toh tumhein
+      ek special feeling ho.
+    </p>
+    <button class="main-button" onclick="finalReveal()">
+      OPEN FINAL MESSAGE ✨
     </button>
-  </section>
 
-  <section id="dua" class="hidden">
-    <div class="divider">✧ 🤲 ✧</div>
-    <h2>For Your Health</h2>
-
-    <div class="card">
-      <div class="rose">🌸</div>
-      <p class="message">
-        Ya Allah, Fatima ko mukammal sehat,
-        sukoon aur khushiyan ata farma.
-        Uski har takleef door farma aur
-        uske har naye din ko pehle se behtar bana.
-        Ameen. 🤲
+    <div id="finalMessage" class="hidden-message"
+         style="display:none">
+      <p class="dua">
+        Fatima, tumhari sehat, tumhara sukoon
+        aur tumhari khushi hamesha qeemti rahe.
+        <br><br>
+        Yeh chhoti si duniya sirf tumhare liye
+        banayi gayi hai.
       </p>
+      <div class="divider"></div>
+      <p class="eyebrow">With love and prayers</p>
+      <div class="final-name">HUSSAIN ALI</div>
+      <p class="description">For Fatima. Always. ♾️</p>
     </div>
-
-    <button onclick="showSection('final')">
-      Open Your Final Surprise ❤️
-    </button>
-  </section>
-
-  <section id="final" class="hidden">
-    <div class="divider">✧ 🌹 ✧</div>
-
-    <div class="rose">❤️</div>
-
-    <h2>One Last Thing, Fatima...</h2>
-
-    <div class="card">
-      <p class="message">
-        Tumhari muskurahat bohot qeemti hai.
-        Apna khayal rakhna, araam karna aur
-        hamesha yaad rakhna ke tumhari khushi
-        mere liye bohot ahmiyat rakhti hai.
-      </p>
-
-      <div class="divider">∞</div>
-
-      <h2>Made With Love</h2>
-      <h1 style="font-size:34px">HUSSAIN ALI</h1>
-      <p>For Fatima, Always. 🌹</p>
-    </div>
-
-    <p>May your days always be filled with happiness.</p>
-  </section>
-
-  <footer>
-    A tiny universe, created especially for Fatima 🌹
-  </footer>
+  </div>
+</section>
 
 </main>
 
+<footer class="footer">
+  A UNIVERSE OF HER OWN
+  <br><br>
+  CREATED WITH CARE FOR FATIMA ✦
+</footer>
+
 <script>
-function showSection(id) {
-  document.querySelectorAll("section").forEach(section => {
-    section.classList.add("hidden");
+// CREATE STARS
+const stars = document.getElementById("stars");
+
+for(let i=0; i<100; i++){
+  const star = document.createElement("span");
+  star.className = "star";
+  star.style.left = Math.random()*100 + "%";
+  star.style.top = Math.random()*100 + "%";
+  star.style.animationDelay = Math.random()*4 + "s";
+  star.style.animationDuration = (2+Math.random()*4) + "s";
+  stars.appendChild(star);
+}
+
+// ENTER UNIVERSE
+function enterUniverse(){
+  document.getElementById("mainContent").scrollIntoView({
+    behavior:"smooth"
   });
-
-  document.getElementById(id).classList.remove("hidden");
-
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
+  showToast("Welcome to your little universe, Fatima ✨");
 }
 
-function revealSecret() {
-  document.getElementById("secret").innerHTML =
-    "Fatima, tumhari sehat, tumhara sukoon aur tumhari muskurahat mere liye bohot special hain. ❤️🌹";
+// CARD REVEAL
+function reveal(number){
+  const item = document.getElementById("message"+number);
+  const isOpen = item.style.display === "block";
+
+  item.style.display = isOpen ? "none" : "block";
 }
 
-function answer(message) {
-  document.getElementById("answer").innerHTML = message;
+// CHOICE GAME
+function choose(message){
+  document.getElementById("choiceResult").textContent =
+    "Your universe: " + message;
 }
 
-function makePetals() {
-  const area = document.getElementById("petals");
-
-  for (let i = 0; i < 18; i++) {
-    const petal = document.createElement("div");
-    petal.className = "petal";
-    petal.innerHTML = "🌸";
-    petal.style.left = Math.random() * 100 + "vw";
-    petal.style.animationDuration = (6 + Math.random() * 8) + "s";
-    petal.style.animationDelay = (Math.random() * 8) + "s";
-    petal.style.fontSize = (12 + Math.random() * 15) + "px";
-    area.appendChild(petal);
-  }
+// FINAL REVEAL
+function finalReveal(){
+  const box = document.getElementById("finalMessage");
+  box.style.display = "block";
+  box.scrollIntoView({behavior:"smooth",block:"center"});
+  showToast("A special message for you ❤️");
 }
 
-makePetals();
+// SMALL NOTIFICATION
+function showToast(message){
+  const toast = document.getElementById("toast");
+  toast.textContent = message;
+  toast.style.display = "block";
+
+  clearTimeout(window.toastTimer);
+  window.toastTimer = setTimeout(()=>{
+    toast.style.display = "none";
+  },3000);
+}
 </script>
 
 </body>
